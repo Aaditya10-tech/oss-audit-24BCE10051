@@ -1,4 +1,4 @@
-# OSS Audit — [Your Roll Number]
+# OSS Audit — 24BCE10051
 
 > **Open Source Software Audit** | VITyarthi | OSS NGMC Course
 
@@ -8,10 +8,10 @@
 
 | Field | Details |
 |---|---|
-| **Name** | [Your Full Name] |
-| **Roll Number** | [Your Roll Number] |
-| **Slot** | [Your Slot] |
-| **Date of Submission** | [DD Month YYYY] |
+| **Name** | Aaditya Chougule |
+| **Roll Number** | 24BCE10051 |
+| **Slot** | F11 |
+| **Date of Submission** | 31/03/26 |
 
 ---
 
@@ -38,41 +38,38 @@ oss-audit-[rollnumber]/
 
 ## Scripts Overview
 
-### Script 1 — System Identity Report
+### Script 1 — System Identity Overview
 **File:** `script1_system_identity.sh`  
-**Description:** Displays a system welcome screen showing the Linux distribution name, kernel version, current logged-in user, home directory, system uptime, current date/time, and the open-source license covering the OS.  
-**Concepts Used:** Variables, `echo`, command substitution (`$()`), output formatting.
+**Description:** Presents a welcome dashboard displaying key system details such as the Linux distribution name, kernel version, current user, home directory, system uptime, current date/time, and the OS license information.  
+**Concepts Used:** Variables, `echo`, command substitution (`$()`), formatted output.
 
 ---
 
-### Script 2 — FOSS Package Inspector
+### Script 2 — FOSS Package Checker
 **File:** `script2_package_inspector.sh`  
-**Description:** Checks whether the chosen software package is installed on the system, retrieves its version and metadata, and uses a `case` statement to print a short philosophical description of its purpose.  
-**Concepts Used:** `if-then-else`, `case` statement, `rpm -qi` / `dpkg -l`, pipe with `grep`.
+**Description:** Verifies if a specified software package is installed, fetches its version and related details, and uses a `case` statement to display a brief conceptual description of its role.  
+**Concepts Used:** `if-then-else`, `case` statement, `rpm -qi` / `dpkg -l`, piping with `grep`.
 
 ---
 
-### Script 3 — Disk and Permission Auditor
+### Script 3 — Disk & Permission Scanner
 **File:** `script3_disk_permission_auditor.sh`  
-**Description:** Loops through a list of important system directories (`/etc`, `/var/log`, `/home`, `/usr/bin`, `/tmp`) and reports disk usage and owner/permission details for each. Also checks if the chosen software's config directory exists.  
+**Description:** Iterates through essential system directories (`/etc`, `/var/log`, `/home`, `/usr/bin`, `/tmp`) to report disk usage and ownership/permission details. It also checks for the existence of a configuration directory for a selected software.  
 **Concepts Used:** `for` loop, `df`, `ls -ld`, `awk`, `cut`.
 
 ---
 
-### Script 4 — Log File Analyzer
+### Script 4 — Log Analyzer Tool
 **File:** `script4_log_analyzer.sh`  
-**Description:** Reads a log file line by line, counts occurrences of a specified keyword (default: `error`), and prints a summary. Accepts the log file path and keyword as command-line arguments.  
+**Description:** Processes a log file line by line, counts how many times a given keyword (default: `error`) appears, and outputs a summary. Accepts the log file path and keyword as command-line inputs.  
 **Concepts Used:** `while read` loop, `if-then`, counter variables, command-line arguments (`$1`, `$2`).
 
 ---
 
-### Script 5 — Open Source Manifesto Generator
+### Script 5 — Open Source Statement Generator
 **File:** `script5_manifesto_generator.sh`  
-**Description:** Interactively asks the user three questions and generates a personalised open-source philosophy statement, saving the output to a `.txt` file named after the current user.  
-**Concepts Used:** `read` for user input, string concatenation, file writing with `>` and `>>`, `date` command.
-
----
-
+**Description:** Prompts the user with three interactive questions and generates a customized open-source philosophy statement, saving it to a `.txt` file named after the current user.  
+**Concepts Used:** `read` for input, string concatenation, file output using `>` and `>>`, `date` command.
 ## How to Run the Scripts
 
 ### Prerequisites
