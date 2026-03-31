@@ -1,24 +1,24 @@
 #!/bin/bash
 # =============================================================
 # Script 2: FOSS Package Inspector
-# Author: [Your Name] | Roll: [Your Roll Number]
+# Author: Aaditya Chougule | Roll: 24BCE10051
 # Course: Open Source Software | VITyarthi
 # Description: Checks if Firefox is installed, displays version
 #              and license info, and prints a philosophy note
 #              about the package using a case statement.
 # =============================================================
 
-# --- Define the package to inspect ---
-PACKAGE="firefox"   # Our chosen software for this audit
+
+PACKAGE="firefox"  
 
 echo "============================================================"
 echo "         FOSS PACKAGE INSPECTOR — $PACKAGE                 "
 echo "============================================================"
 echo ""
 
-# --- Check if the package is installed using if-then-else ---
+
 if command -v dpkg &>/dev/null; then
-    # Debian/Ubuntu-based: use dpkg to check
+    
     if dpkg -l "$PACKAGE" &>/dev/null; then
         echo "  [✔] $PACKAGE is INSTALLED on this system."
         echo ""
@@ -31,7 +31,7 @@ if command -v dpkg &>/dev/null; then
     fi
 
 elif command -v rpm &>/dev/null; then
-    # RPM-based (Fedora/CentOS/RHEL): use rpm -qi
+   
     if rpm -q "$PACKAGE" &>/dev/null; then
         echo "  [✔] $PACKAGE is INSTALLED on this system."
         echo ""
@@ -44,7 +44,6 @@ elif command -v rpm &>/dev/null; then
     fi
 
 else
-    # Fallback: check the firefox binary directly
     if command -v firefox &>/dev/null; then
         echo "  [✔] Firefox is INSTALLED (detected via binary)."
     else
@@ -55,16 +54,15 @@ fi
 
 echo ""
 echo "  --- Installed Version ---"
-firefox --version 2>&1   # Print exact Firefox version
+firefox --version 2>&1   
 
 echo ""
 echo "  --- Firefox Executable Location ---"
-which firefox            # Show where Firefox binary lives
-
+which firefox            
 echo ""
 echo "  --- Open Source Philosophy Note ---"
 
-# --- Case statement: philosophy note based on package name ---
+
 case $PACKAGE in
     firefox)
         echo "  Firefox: When Internet Explorer dominated 95% of the"
