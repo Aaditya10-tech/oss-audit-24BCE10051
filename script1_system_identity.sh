@@ -1,34 +1,31 @@
 #!/bin/bash
 # =============================================================
 # Script 1: System Identity Report
-# Author: [Your Name] | Roll: [Your Roll Number]
+# Author: Aaditya Chougule | Roll: 24BCE10051
 # Course: Open Source Software | VITyarthi
 # Description: Displays a welcome screen with system info and
 #              confirms the OS and Firefox license details.
 # =============================================================
 
-# --- Student & Software Variables ---
-STUDENT_NAME="[Your Name]"         # Replace with your name
-ROLL_NUMBER="[Your Roll Number]"   # Replace with your roll number
-SOFTWARE_CHOICE="Firefox"          # Chosen open-source software
 
-# --- Gather System Information using command substitution ---
-KERNEL=$(uname -r)                                                            # Linux kernel version
-DISTRO=$(cat /etc/os-release | grep PRETTY_NAME | cut -d= -f2 | tr -d '"')  # Distro name
-USER_NAME=$(whoami)                                                           # Currently logged-in user
-HOME_DIR=$HOME                                                                # Home directory of current user
-UPTIME=$(uptime -p)                                                           # Human-readable system uptime
-CURRENT_DATE=$(date '+%A, %d %B %Y')                                         # Formatted current date
-CURRENT_TIME=$(date '+%H:%M:%S')                                             # Current time
+STUDENT_NAME="Aaditya Chougule"         
+ROLL_NUMBER="24BCE10051"   
+SOFTWARE_CHOICE="Firefox"          
 
-# --- Get Firefox version if installed ---
+KERNEL=$(uname -r)                                                            
+DISTRO=$(cat /etc/os-release | grep PRETTY_NAME | cut -d= -f2 | tr -d '"')  
+USER_NAME=$(whoami)                                                           
+HOME_DIR=$HOME                                                                
+UPTIME=$(uptime -p)                                                           
+CURRENT_DATE=$(date '+%A, %d %B %Y')                                         
+CURRENT_TIME=$(date '+%H:%M:%S')                                             
+
 if command -v firefox &>/dev/null; then
-    FIREFOX_VERSION=$(firefox --version 2>&1)   # e.g. Mozilla Firefox 124.0
+    FIREFOX_VERSION=$(firefox --version 2>&1)   
 else
     FIREFOX_VERSION="Firefox not found"
 fi
 
-# --- Display the System Identity Report ---
 echo "============================================================"
 echo "        OPEN SOURCE AUDIT — SYSTEM IDENTITY REPORT         "
 echo "============================================================"
@@ -46,7 +43,6 @@ echo "  Time       : $CURRENT_TIME"
 echo "  Firefox    : $FIREFOX_VERSION"
 echo "------------------------------------------------------------"
 
-# --- License message for Firefox and the OS ---
 echo "  OS License     : The Linux kernel is licensed under GPL v2."
 echo "                   You have the freedom to run, study, modify,"
 echo "                   and distribute this software freely."
